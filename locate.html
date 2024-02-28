@@ -1,0 +1,76 @@
+<html lang="en-CAN">
+
+<head>
+    <title>Meghan Rennie</title>
+    <link rel="icon" type="image/png" href="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="js/scripts.js"></script>
+</head>
+
+<body class="dark">
+    <header class="medium" id="main-header">
+        <ul>
+            <li id="about" class="basic-padding">About</li>
+            <li id="help" class="basic-padding">Problems</li>
+            <li class="basic-padding">Access</li>
+        </ul>
+    </header>
+    <main class="light basic-padding containment center-container">
+        <div class="basic-padding above-the-clouds">
+            <div class="wrap-pad">
+                <p>Have you made it?</p>
+            </div>
+            <div class="center-container">
+                <div class="wrap-pad">
+                    <div class="button basic-padding" id="gps">Share Location</div>
+                </div>
+                <div class="wrap-pad">
+                    <div class="back-button button basic-padding">Backtrack</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('gps').addEventListener('click', function () {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    // Get the user's latitude and longitude
+                    var userLatitude = position.coords.latitude;
+                    var userLongitude = position.coords.longitude;
+
+                    // Check if the location is within a specific area (for example, within a square)
+                    if (isWithinSpecificArea(userLatitude, userLongitude)) {
+                        // Redirect to the new page
+                        window.location.href = 'newPage.html';
+                    } else {
+                        alert('You are not within the specified area.');
+                    }
+                }, function (error) {
+                    console.error('Error getting user location:', error.message);
+                });
+            } else {
+                alert('Geolocation is not supported by your browser.');
+            }
+        });
+
+        // Function to check if the location is within a specific area (replace with your own logic)
+        function isWithinSpecificArea(latitude, longitude) {
+            // Example: Check if the location is within a square with predefined boundaries
+            var minLat = 35.0;
+            var maxLat = 36.0;
+            var minLng = -120.0;
+            var maxLng = -119.0;
+
+            return (
+                latitude >= minLat && latitude <= maxLat &&
+                longitude >= minLng && longitude <= maxLng
+            );
+        }
+    </script>
+</body>
+
+</html>
