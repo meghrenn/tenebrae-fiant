@@ -282,7 +282,7 @@
 
         // Play random audio clip
         const randomClipNumber = Math.floor(Math.random() * 5) + 1; // Generate random number between 1 and 5
-        const audio = new Audio('../audio/dirt${randomClipNumber}.mp3'); // Construct path to random audio clip
+        const audio = new Audio(`../audio/dirt${randomClipNumber}.mp3`); // Construct path to random audio clip
         audio.play(); // Play the selected audio clip
 
         if (erasedPixels >= 0.9 * (rect.width * rect.height)) { // Check if at least 80% of pixels are erased
