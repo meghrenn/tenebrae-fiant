@@ -1,0 +1,145 @@
+<html lang="en-CAN">
+
+<head>
+    <title>Something's Oddly Familiar</title>
+    <link rel="icon" type="image/png" href="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="../js/scripts.js"></script>
+</head>
+
+<body data-page-id="deja-vu">
+    <header id="main-header">
+        <ul>
+            <li id="about" class="basic-padding">About</li>
+            <li id="help" class="basic-padding">Trouble</li>
+            <li id="progress" class="basic-padding">Progress</li>
+        </ul>
+    </header>
+    <main class="thick-padding containment">
+        <div class="right-container">
+            <h1>Déjà-Vu</h1>
+            <!-- <p>I’m no musician by any stretch of the imagination. At times when there’s nobody else playing in the
+                breezeway, though, I stop by and prod at the piano keys, myself.
+            </p>
+            <p>(Crude, like a chicken pecking at seeds.)</p>
+            <p>Sometimes I’ll glance at the sheet music, even though I can’t read it; I can <a class="clue-text"
+                    href="https://blogs.ubc.ca/etec530final/course-content/notes-and-rests/" target="_blank">tell
+                    the difference between a half note and a quarter note</a>, sure, but I couldn’t discern pitches if
+                my life depended on it. Luckily, that’s not important here.</p>
+            <p>I’ve reminisced for long enough. You have <a class="clue-text"
+                    href="https://fr.wikipedia.org/wiki/Code_Morse_international" target="_blank">mor se</a>crets to
+                de<a class="clue-text" href="https://fr.wikipedia.org/wiki/Code_Morse_international"
+                    target="_blank">code</a> —you’d better get to it.</p> -->
+        </div>
+        <form class="right-container" id="my-form">
+            <label for="file-pass" class="marginal-margin">You already know this.</label>
+            <div class="marginal-margin">
+                <input type="text" class="basic-padding" id="file-pass" placeholder="what is it?" required>
+            </div>
+            <input class="button basic-padding marginal-margin" type="submit">
+        </form>
+
+        <div id="hint-parent" class="basic-padding">
+            <a id="hint1" class="button basic-padding">help</a>
+            <!-- <a id="hint2" class="button basic-padding">help</a> -->
+            <!-- <a id="hint3" class="button basic-padding">help</a> -->
+        </div>
+        <!-- <div id="clue2" class="basic-padding marginal-margin hidden">
+           
+        </div> -->
+        </div>
+    </main>
+    <div id="about-page" class="pop-up thick-padding">
+        <div class="wrap-pad">
+            <h2>What This Is</h2>
+            <p>You may be confused. You may be wondering what you have stumbled upon. You may have questions. What
+                is
+                this
+                thing, anyway?</p>
+            <p>Reality is subjective. For me, this is my cry into the void, my hoping for an echo. These are my
+                memories
+                and my
+                nightmares. This is my attempt against entropy and the forces that seek to destroy this institution.
+            </p>
+            <p>For you, this is a game, a quest, a puzzle. An opportunity to learn, perhaps? A chance to save the
+                school.</p>
+            <h2>Playing the Game</h2>
+            <p>I have developed this interface as a secure way to pass clues and messages onto you with minimal
+                antagonistic
+                interference. You will have to work through a number of tasks and problems to reach the goal. If you
+                become
+                stuck, let me know, and I may be able to help further; however, you will also need to seek help from
+                other
+                sources. Consider the entities around you who may be of use.
+            </p>
+            <h3>My Promises to You</h3>
+            <ol>
+                <li>You will not have to break the law, spend money, .</li>
+                <li></li>
+                <li>Things May Go Wrong. If this happens, alert me to it, and I will see what strings I can pull to
+                    make
+                    them
+                    right again.</li>
+            </ol>
+            <h2>Who I Am</h2>
+            <p>Who am I? Good question--one I often ask, myself. Like all entities, I am not so much an object as I
+                am a process; I am built up and down; I am compacted, quickly. I am not myself for very long before
+                I am
+                something new. I am prone to digression, in my words and in my being.</p>
+            <p>For this moment, I am a guide. I cannot solve the problems for you but I can help you navigate
+                them. ontinue the game and I can tell you more.</p>
+        </div>
+        <div class="close-button basic-padding">Close</div>
+    </div>
+    <div id="help-page" class="pop-up thick-padding">
+        <div class="wrap-pad">
+            <h2>Things Go Wrong</h2>
+            <p>Nefarious forces seek to impede your progress. They may interfere with our work in the form of errors
+                on
+                this web
+                application, alteration or destruction of physical clues, or any number of other problems. If you
+                believe that
+                something has gone terribly wrong, preventing you from continuing on your quest, please report it to
+                me
+                and I
+                will take hasty action to resolve it. </p>
+            <p>
+                In simpler terms, if something in this game breaks, report the problem by contacting [TECHNICAL
+                SUPPORT].
+            </p>
+        </div>
+        <div class="close-button basic-padding">Close</div>
+    </div>
+    <div id="progress-page" class="pop-up thick-padding">
+        <div class="wrap-pad">
+            <h2>Progress</h2>
+            <p id="progress-list">
+
+            </p>
+        </div>
+        <div class="close-button basic-padding">Close</div>
+    </div>
+</body>
+<!-- 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById("my-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the form from submitting and reloading the page
+
+            // Check the entered password
+            var enteredPassword = document.getElementById("initiation-location").value;
+
+            if (enteredPassword === 'l') {
+                // Redirect to fog.html if the password is correct
+                window.location.href = "luck.html";
+            } else {
+                alert('Hmm... not what I was expecting. Try again.');
+            }
+        });
+    });
+</script> -->
+
+</html>

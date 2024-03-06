@@ -1,0 +1,299 @@
+<html lang="en-CAN">
+
+<head>
+    <title>Any Fans of Anagrams?</title>
+    <link rel="icon" type="image/png" href="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="../js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+
+</head>
+<style>
+    .draggable {
+        font-family: 'AbscissaBold', 'Arial', sans-serif;
+        font-size: 24px;
+        user-select: none;
+        cursor: move;
+        background: var(--red-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 4rem;
+        margin-bottom: 10px;
+        z-index: 1;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+        transition: 0.5s ease-in-out;
+    }
+
+    .drag {
+        position: fixed;
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.16);
+    }
+
+    .placeholder {
+        margin-bottom: 10px;
+        height: 4px;
+        margin-top: -14px;
+        /* default space + placeholder height */
+        transform: translateY(7px);
+        /* placeholder margin-top / 2 */
+        background-color: deeppink;
+        border-radius: 2px;
+    }
+</style>
+
+<body data-page-id="society">
+    <header id="main-header">
+        <ul>
+            <li id="about" class="basic-padding">About</li>
+            <li id="help" class="basic-padding">Problems</li>
+            <li id="progress" class="basic-padding">Progress</li>
+        </ul>
+    </header>
+    <main class="thick-padding containment">
+        <h1>Society</h1>
+        <p>Oh, I recognize this. <a href="https://www.ulethbridge.ca/unews/article/beetle-mystery-finally-solved"
+                target="_blank">It was a prank some students pulled, years ago.</a></p>
+        <img class="marginal-margin" src="../images/vw-bug1.png">
+        <p>If you look back at the first image, you can even
+            see a word spray-painted on the bug's roof.</p>
+        <img class="marginal-margin" src="../images/vw-bug2.png">
+        <p>(This says <s>a lot about</s> society.)</p>
+        <p>What else could it say?</p>
+        <div class="wrap">
+            <div id="list">
+                <div class="draggable">S</div>
+                <div class="draggable">O</div>
+                <div class="draggable">C</div>
+                <div class="draggable">I</div>
+                <div class="draggable">E</div>
+                <div class="draggable">T</div>
+                <div class="draggable">Y</div>
+            </div>
+        </div>
+    </main>
+    <div id="about-page" class="pop-up thick-padding alarm-off">
+        <div class="wrap-pad">
+            <h2>What This Is</h2>
+            <p>You may be confused. You may be wondering what you have stumbled upon. You may have questions. What
+                is
+                this
+                thing, anyway?</p>
+            <p>Reality is subjective. For me, this is my cry into the void, my hoping for an echo. These are my
+                memories
+                and my
+                nightmares. This is my attempt against entropy and the forces that seek to destroy this institution.
+            </p>
+            <p>For you, this is a game, a quest, a puzzle. An opportunity to learn, perhaps? A chance to save the
+                school.</p>
+            <h2>Playing the Game</h2>
+            <p>I have developed this interface as a secure way to pass clues and messages onto you with minimal
+                antagonistic
+                interference. You will have to work through a number of tasks and problems to reach the goal. If you
+                become
+                stuck, let me know, and I may be able to help further; however, you will also need to seek help from
+                other
+                sources. Consider the entities around you who may be of use.
+            </p>
+            <h3>My Promises to You</h3>
+            <ol>
+                <li>You will not have to break the law, spend money, .</li>
+                <li></li>
+                <li>Things May Go Wrong. If this happens, alert me to it, and I will see what strings I can pull to
+                    make
+                    them
+                    right again.</li>
+            </ol>
+            <h2>Who I Am</h2>
+            <p>Who am I? Good question--one I often ask, myself. Like all entities, I am not so much an object as I
+                am a process; I am built up and down; I am compacted, quickly. I am not myself for very long before
+                I am
+                something new. I am prone to digression, in my words and in my being.</p>
+            <p>For this moment, I am a guide. I cannot solve the problems for you but I can help you navigate
+                them. ontinue the game and I can tell you more.</p>
+        </div>
+        <div class="close-button button basic-padding">Close</div>
+    </div>
+    <div id="help-page" class="pop-up thick-padding alarm-off">
+        <div class="wrap-pad">
+            <h2>Things Go Wrong</h2>
+            <p>Nefarious forces seek to impede your progress. They may interfere with our work in the form of errors
+                on
+                this web
+                application, alteration or destruction of physical clues, or any number of other problems. If you
+                believe that
+                something has gone terribly wrong, preventing you from continuing on your quest, please report it to
+                me
+                and I
+                will take hasty action to resolve it. </p>
+            <p>
+                In simpler terms, if something in this game breaks, report the problem by contacting [TECHNICAL
+                SUPPORT].
+            </p>
+        </div>
+        <div class="close-button button basic-padding">Close</div>
+    </div>
+    <div id="progress-page" class="pop-up thick-padding">
+        <div class="wrap-pad">
+            <h2>Progress</h2>
+            <p id="progress-list">
+
+            </p>
+        </div>
+        <div class="close-button button basic-padding">Close</div>
+    </div>
+</body>
+<script>
+    // https://codepen.io/plancktime_/pen/rNzjWVm
+    document.addEventListener('DOMContentLoaded', function () {
+        const list = document.getElementById('list');
+        let dragEle;
+        let cloneEle;
+        let placeholder;
+        let isDraggingStarted = false;
+
+        let x = 0;
+        let y = 0;
+
+        const swap = function (nodeA, nodeB) {
+            const parentA = nodeA.parentNode;
+            const siblingA = nodeA.nextSibling === nodeB ? nodeA : nodeA.nextSibling;
+            nodeB.parentNode.insertBefore(nodeA, nodeB);
+            parentA.insertBefore(nodeB, siblingA);
+        };
+
+        const isAbove = function (nodeA, nodeB) {
+            const rectA = nodeA.getBoundingClientRect();
+            const rectB = nodeB.getBoundingClientRect();
+            return rectA.top + rectA.height / 2 < rectB.top + rectB.height / 2;
+        };
+
+        const mouseDownHandler = function (e) {
+            if (e.button == 0) {
+                document.addEventListener('mousemove', mouseMoveHandler);
+                document.addEventListener('mouseup', mouseUpHandler);
+            }
+        };
+
+        const mouseMoveHandler = function (e) {
+
+            if (!isDraggingStarted) {
+                dragEle = e.target.closest('.draggable');
+                cloneEle = dragEle.cloneNode(true);
+                cloneEle.classList.add('opacity');
+                dragEle.classList.add('drag');
+                const draggingRect = dragEle.getBoundingClientRect();
+
+                isDraggingStarted = true;
+
+                dragEle.insertAdjacentElement('afterend', cloneEle);
+                const rect = dragEle.getBoundingClientRect();
+                x = e.pageX - rect.left + window.scrollX;
+                y = e.pageY - rect.top + window.scrollY;
+
+                placeholder = document.createElement('div');
+                placeholder.classList.add('placeholder');
+                dragEle.parentNode.insertBefore(placeholder, dragEle.nextSibling);
+            }
+
+            dragEle.style.top = `${e.pageY - y}px`;
+            dragEle.style.left = `${e.pageX - x}px`;
+
+            const prevEle = dragEle.previousElementSibling;
+            const nextEle = placeholder.nextElementSibling;
+
+            if (prevEle && isAbove(dragEle, prevEle)) {
+                swap(placeholder, dragEle);
+                swap(placeholder, prevEle);
+                return;
+            }
+
+            if (nextEle && isAbove(nextEle, dragEle)) {
+                swap(nextEle, placeholder);
+                swap(nextEle, dragEle);
+            }
+        };
+
+        const mouseUpHandler = function () {
+            document.removeEventListener('mousemove', mouseMoveHandler);
+            document.removeEventListener('mouseup', mouseUpHandler);
+
+            placeholder && placeholder.parentNode.removeChild(placeholder);
+            cloneEle && cloneEle.parentNode.removeChild(cloneEle);
+
+            dragEle.style.removeProperty('top');
+            dragEle.style.removeProperty('left');
+            dragEle.style.removeProperty('position');
+            dragEle.classList.remove('drag');
+
+            x = null;
+            y = null;
+            dragEle = null;
+            cloneEle = null;
+            isDraggingStarted = false;
+
+        };
+
+        [].slice.call(list.querySelectorAll('.draggable')).forEach(function (item) {
+            item.addEventListener('mousedown', mouseDownHandler);
+        });
+    });
+
+    // Get the container element
+    const list = document.getElementById('list');
+
+
+
+    new Sortable(list, {
+        onStart: function (evt) {
+            // Add border color to the element being dragged
+            evt.item.style.border = "6px solid var(--red-medium)";
+        },
+        onEnd: function (evt) {
+            const draggableElements = document.querySelectorAll('.draggable');
+            const text = Array.from(list.children).map(child => child.textContent).join('');
+
+
+            evt.item.style.border = "";
+
+            // Reset border color for all elements
+            draggableElements.forEach(element => {
+                element.style.borderColor = '';
+            });
+            if (text === "COYSITE") {
+                var audio = new Audio('../audio/click2.mp3');
+                audio.volume = 0.7;
+                audio.play();
+                // Iterate over each draggable element
+                draggableElements.forEach(element => {
+                    // Change background color temporarily
+                    element.style.backgroundColor = 'var(--green-light)';
+                    element.style.color = 'var(--dark)';
+                    // Set timeout to revert the color change
+                    setTimeout(function () {
+                        element.style.backgroundColor = '';
+                        element.style.color = '';
+                        window.location.href = "coy-site.html";
+                    }, 1000);
+                });
+            } else {
+                var audio = new Audio('../audio/click1.mp3');
+                audio.volume = 0.7;
+                audio.play();
+                draggableElements.forEach(element => {
+                    element.style.backgroundColor = 'var(--red-light)';
+                    setTimeout(function () {
+                        element.style.backgroundColor = '';
+                    }, 400);
+                });
+            }
+            console.log(text);
+        }
+    });
+</script>
+
+</html>

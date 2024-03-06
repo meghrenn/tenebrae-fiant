@@ -1,0 +1,311 @@
+<html lang="en-CAN">
+
+<head>
+    <title>UHall Will Fall</title>
+    <link rel="icon" type="image/png" href="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/audio-player.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="../js/scripts.js"></script>
+</head>
+<style>
+    .interview {
+        background-color: antiquewhite;
+    }
+
+    .interview>* {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 16px;
+        color: #000000;
+    }
+</style>
+
+<body data-page-id="collapse">
+    <header id="main-header">
+        <ul>
+            <li id="about" class="basic-padding">About</li>
+            <li id="help" class="basic-padding">Problems</li>
+            <li id="progress" class="basic-padding">Progress</li>
+        </ul>
+    </header>
+    <main class="containment " style="padding:0;">
+        <div class="thick-padding">
+            <h1>Collapse</h1>
+            <!-- <p> Are they still visions if there's nothing visible? Or are they just auditory hallucinations?</p>
+            <p>I hear voices. <a href="https://www.ulethbridge.ca/50-voices/content/bob" target="_blank">I know where
+                    they're from</a>, but that doesn't help us any. It doesn't remove them from my head. They're nestled
+                in like parasites, like propaganda.</p> -->
+            <!-- audio player adapted from https://codepen.io/MM-Z-the-animator/pen/yLQjyam -->
+            <div class="center-container">
+                <div class="aWrap marginal-margin">
+                    <div class="range">
+                        <span class="under-ranger"></span>
+                        <input class="aSeek" type="range" min="0" value="0" step="1" disabled><span
+                            class="change-range"></span>
+                    </div>
+                    <div class="aCron">
+                        <span class="aNow"></span> / <span class="aTime"></span>
+                    </div>
+                    <div id="bWrap">
+                        <button class="button" id="aPlay" disabled><span class="aPlayIco">
+                                <p class="fa fa-play">Listen</p>
+                            </span></button>
+                        <div class="volume-container">
+                            <span class="aVolIco"><i class="fa fa-volume-up"></i></span>
+                            <div class="range-volume">
+                                <span class="under-ranger"></span>
+                                <input class="aVolume" type="range" min="0" max="1" value="1" step="0.1" disabled><span
+                                    class="change-range"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="thick-padding right-container interview">
+            <p>
+                JT: You know the University sliding into the [Oldman] river was one of the great myths that you
+                always
+                heard in the early years here.</p>
+            <p>BC: Well certainly!</p>
+            <p> JT: And it was a metaphor for the whole University (BC: It was!) whether you were going to live or
+                not was connected to whether it is gonna slide down there or not.</p>
+            <p>BC: That's right, and--</p>
+            <p>JT: You probably got quite sick and tired of hearing that.</p>
+            <p>BC: Well, you heard it everywhere you went, even around the city how it’s going to slide into the
+                river.
+                Well, yes, it was a hard thing to convince people that it wouldn’t.</p>
+            <p>...</p>
+            <p>BC: And even in 1990 when you went out anywhere everybody was saying, 'Well gee, it’s not going to
+                slip
+                and
+                slide into the river?' You always had to be on the defensive.</p>
+        </div>
+        <form class="right-container wrap-pad thick-padding" id="my-form">
+            <p>The University of Lethbridge <select style="display:inline;" class="basic-padding marginal-margin"
+                    id="file-pass" required>
+                    <option value="null"></option>
+                    <option value="will">will</option>
+                    <option value="will-not">will not</option>
+                </select>
+                fall into the Oldman River.</p>
+            <input class="button basic-padding marginal-margin" type="submit">
+
+        </form>
+    </main>
+    <div id="about-page" class="pop-up thick-padding alarm-off">
+        <div class="wrap-pad">
+            <h2>What This Is</h2>
+            <p>You may be confused. You may be wondering what you have stumbled upon. You may have questions. What
+                is
+                this
+                thing, anyway?</p>
+            <p>Reality is subjective. For me, this is my cry into the void, my hoping for an echo. These are my
+                memories
+                and my
+                nightmares. This is my attempt against entropy and the forces that seek to destroy this institution.
+            </p>
+            <p>For you, this is a game, a quest, a puzzle. An opportunity to learn, perhaps? A chance to save the
+                school.</p>
+            <h2>Playing the Game</h2>
+            <p>I have developed this interface as a secure way to pass clues and messages onto you with minimal
+                antagonistic
+                interference. You will have to work through a number of tasks and problems to reach the goal. If you
+                become
+                stuck, let me know, and I may be able to help further; however, you will also need to seek help from
+                other
+                sources. Consider the entities around you who may be of use.
+            </p>
+            <h3>My Promises to You</h3>
+            <ol>
+                <li>You will not have to break the law, spend money, .</li>
+                <li></li>
+                <li>Things May Go Wrong. If this happens, alert me to it, and I will see what strings I can pull to
+                    make
+                    them
+                    right again.</li>
+            </ol>
+            <h2>Who I Am</h2>
+            <p>Who am I? Good question--one I often ask, myself. Like all entities, I am not so much an object as I
+                am a process; I am built up and down; I am compacted, quickly. I am not myself for very long before
+                I am
+                something new. I am prone to digression, in my words and in my being.</p>
+            <p>For this moment, I am a guide. I cannot solve the problems for you but I can help you navigate
+                them. ontinue the game and I can tell you more.</p>
+        </div>
+        <div class="close-button button basic-padding">Close</div>
+    </div>
+    <div id="help-page" class="pop-up thick-padding alarm-off">
+        <div class="wrap-pad">
+            <h2>Things Go Wrong</h2>
+            <p>Nefarious forces seek to impede your progress. They may interfere with our work in the form of errors
+                on
+                this web
+                application, alteration or destruction of physical clues, or any number of other problems. If you
+                believe that
+                something has gone terribly wrong, preventing you from continuing on your quest, please report it to
+                me
+                and I
+                will take hasty action to resolve it. </p>
+            <p>
+                In simpler terms, if something in this game breaks, report the problem by contacting [TECHNICAL
+                SUPPORT].
+            </p>
+        </div>
+        <div class="close-button button basic-padding">Close</div>
+    </div>
+    <div id="progress-page" class="pop-up thick-padding">
+        <div class="wrap-pad">
+            <h2>Progress</h2>
+            <p id="progress-list">
+
+            </p>
+        </div>
+        <div class="close-button button basic-padding">Close</div>
+    </div>
+</body>
+<script>
+    // Coded by: https://mmzand.ir
+    // Credit: https://code-boxx.com/html-custom-audio-player/#sec-audio
+    // (A) SUPPORT FUNCTION - FORMAT HH:MM:SS
+    var timeString = (secs) => {
+        // (A1) HOURS, MINUTES, SECONDS
+        let ss = Math.floor(secs),
+            hh = Math.floor(ss / 3600),
+            mm = Math.floor((ss - hh * 3600) / 60);
+        ss = ss - hh * 3600 - mm * 60;
+
+        // (A2) RETURN FORMATTED TIME
+        if (hh > 0) {
+            mm = mm < 10 ? "0" + mm : mm;
+        }
+        ss = ss < 10 ? "0" + ss : ss;
+        return hh > 0 ? `${hh}:${mm}:${ss}` : `${mm}:${ss}`;
+    };
+
+    function setProgress(elTarget) {
+        let divisionNumber = elTarget.getAttribute("max") / 100;
+        let rangeNewWidth = Math.floor(elTarget.value / divisionNumber);
+        if (rangeNewWidth > 95) {
+            elTarget.nextSibling.style.width = "95%";
+        } else {
+            elTarget.nextSibling.style.width = rangeNewWidth + "%";
+        }
+    }
+
+    for (let i of document.querySelectorAll(".aWrap")) {
+        // (B) AUDIO + HTML SETUP + FLAGS
+        i.audio = new Audio('../audio/fall-no.mp3');
+        (i.aPlay = document.getElementById("aPlay")),
+            (i.aPlayIco = i.querySelector(".aPlayIco")),
+            (i.aNow = i.querySelector(".aNow")),
+            (i.aTime = i.querySelector(".aTime")),
+            (i.aSeek = i.querySelector(".aSeek")),
+            (i.aVolume = i.querySelector(".aVolume")),
+            (i.aVolIco = i.querySelector(".aVolIco"));
+        i.seeking = false; // user is dragging the seek bar
+
+        // (C) PLAY & PAUSE
+        // (C1) CLICK TO PLAY/PAUSE
+        i.aPlay.onclick = () => {
+            if (i.audio.paused) {
+                i.audio.play();
+            } else {
+                i.audio.pause();
+            }
+        };
+
+        // (C2) SET PLAY/PAUSE ICON
+        i.audio.onplay = () => (i.aPlayIco.innerHTML = '<p class="fa fa-pause">Pause</p>');
+        i.audio.onpause = () => (i.aPlayIco.innerHTML = '<p class="fa fa-play">Play</p>');
+
+        // (D) TRACK PROGRESS & SEEK TIME
+        // (D1) TRACK LOADING
+        i.audio.onloadstart = () => {
+            i.aNow.innerHTML = "Loading";
+            i.aTime.innerHTML = "";
+        };
+
+        // (D2) ON META LOADED
+        i.audio.onloadedmetadata = () => {
+            // (D2-1) INIT SET TRACK TIME
+            i.aNow.innerHTML = timeString(0);
+            i.aTime.innerHTML = timeString(i.audio.duration);
+
+            // (D2-2) SET SEEK BAR MAX TIME
+            i.aSeek.max = Math.floor(i.audio.duration);
+
+            // (D2-3) USER CHANGE SEEK BAR TIME
+            i.aSeek.oninput = () => (i.seeking = true); // prevents clash with (d2-4)
+            i.aSeek.onchange = () => {
+                i.audio.currentTime = i.aSeek.value;
+                if (!i.audio.paused) {
+                    i.audio.play();
+                }
+                i.seeking = false;
+            };
+
+            // (D2-4) UPDATE SEEK BAR ON PLAYING
+            i.audio.ontimeupdate = () => {
+                if (!i.seeking) {
+                    i.aSeek.value = Math.floor(i.audio.currentTime);
+                }
+                i.aNow.innerHTML = timeString(i.audio.currentTime);
+                let divisionNumber = i.aSeek.getAttribute("max") / 100;
+                let rangeNewWidth = Math.floor(i.aSeek.value / divisionNumber);
+                if (rangeNewWidth > 95) {
+                    i.aSeek.nextSibling.style.width = "95%";
+                } else {
+                    i.aSeek.nextSibling.style.width = rangeNewWidth + "%";
+                }
+            };
+        };
+
+        // (E) VOLUME
+        i.aVolIco.onclick = () => {
+            i.audio.volume = i.audio.volume == 0 ? 1 : 0;
+            i.aVolume.value = i.audio.volume;
+            i.aVolIco.innerHTML =
+                i.aVolume.value == 0
+                    ? '<i class="fa fa-volume-off"></i>'
+                    : '<i class="fa fa-volume-up"></i>';
+            if (i.aVolume.value == 0) {
+                i.aVolume.nextSibling.style.width = "0%";
+            } else {
+                i.aVolume.nextSibling.style.width = "95%";
+            }
+        };
+        i.aVolume.onchange = () => {
+            i.audio.volume = i.aVolume.value;
+            i.aVolIco.innerHTML =
+                i.aVolume.value == 0
+                    ? '<i class="fa fa-volume-off"></i>'
+                    : '<i class="fa fa-volume-up"></i>';
+        };
+
+        // (F) ENABLE/DISABLE CONTROLS
+        i.audio.oncanplaythrough = () => {
+            i.aPlay.disabled = false;
+            i.aVolume.disabled = false;
+            i.aSeek.disabled = false;
+        };
+        i.audio.onwaiting = () => {
+            i.aPlay.disabled = true;
+            i.aVolume.disabled = true;
+            i.aSeek.disabled = true;
+        };
+
+        i.aSeek.addEventListener("input", function () {
+            setProgress(this);
+        });
+
+        i.aVolume.addEventListener("input", function () {
+            setProgress(this);
+        });
+    }
+
+</script>
+
+</html>

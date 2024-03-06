@@ -4,15 +4,15 @@ click1, click2: vovere https://freesound.org/s/388457/
 
 click-tear: Breviceps https://freesound.org/s/445972/
 
+sweep: MattRuthSound https://freesound.org/s/561607/ 
 
-dirt: SpliceSound https://freesound.org/s/260130/ STILL NEED CONVERSION
-
-
-
-sweep: MattRuthSound https://freesound.org/s/561607/ NOT IN USE CURRENTLY
-
-roll-in, roll-out: davidkyoku https://freesound.org/s/156614/ NOT IN USE CURRENTLY
+dirt 1-5: SpliceSound https://freesound.org/s/260130/ 
 
 
 
 https://www.ulethbridge.ca/50-voices/content/bob NEED PERMISSION, PROPER CITATION
+
+
+roll-in, roll-out: davidkyoku https://freesound.org/s/156614/ NOT IN USE CURRENTLY
+
+

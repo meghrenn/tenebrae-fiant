@@ -1,0 +1,137 @@
+<html lang="en-CAN">
+
+<head>
+    <title>Arthur the Architect</title>
+    <link rel="icon" type="image/png" href="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="../js/scripts.js"></script>
+</head>
+<style>
+    #text-solution {
+        transform: translateX(1%) translateY(-390%) rotate(-10deg);
+        color: var(--dark);
+        font-size: 20px;
+        width: 270px;
+        position: relative;
+        z-index: 3;
+        transition: 0.25s ease-in-out;
+    }
+</style>
+
+<body data-page-id="architect">
+    <header id="main-header">
+        <ul>
+            <li id="about" class="basic-padding">About</li>
+            <li id="help" class="basic-padding">Problems</li>
+            <li id="progress" class="basic-padding">Progress</li>
+        </ul>
+    </header>
+    <main class="thick-padding containment right-container">
+        <h1>Architect</h1>
+        <p class="eldritch-speak">Jack of most trades, master of none. Still, he remains <b
+                class="clue-text">Erick</b>’s own <b class="clue-text">son</b>.</p>
+        <p>Did we offend his vision?</p>
+        <p>(Reality has a tendency to offend dreams and their dreamers.)</p>
+        <p> I heard he held a grudge. Never came back to campus, not even to receive his honourary degree.
+            But if he’s no longer here, let alone living, how can we reach him?</p>
+        <p>(Words live on after the architect leaves.)</p>
+        <p class="eldritch-speak">Go to <b class="clue-text">the place where he still speaks</b>. He may have <b
+                class="clue-text">the last word</b>, but you can borrow it for now.</p>
+        <form class="right-container" id="my-form">
+            <label for="file-pass" class="marginal-margin">Enter Password:</label>
+            <div class="marginal-margin">
+                <input type="text" class="basic-padding" id="file-pass" placeholder="the last word" required>
+            </div>
+            <input class="button basic-padding marginal-margin" type="submit">
+        </form>
+        <div id="hint-parent" class="basic-padding">
+            <a style="display:none;" id="hint1" class="button basic-padding">help1</a>
+            <a id="hint2" class="button basic-padding">help2</a>
+            <!-- <a id="hint3" class="button basic-padding">help</a> -->
+        </div>
+        <div id="clue2" class="basic-padding marginal-margin hidden">
+            <p>(UHall calls you.)</p>
+            <p>You have a great view of the river from the sixth floor.</p>
+            <h1 class="above-the-clouds thick-padding">A B C ⭐ D E F G H I J K
+                L M N O P Q R S T U V W X Y Z</h1>
+        </div>
+        <div id="clue3" class="basic-padding marginal-margin hidden">
+            <p>On the sixth floor of UHall between blocks C and D, there is a window displaying a quote.</p>
+        </div>
+    </main>
+    <div id="about-page" class="pop-up thick-padding alarm-off">
+        <div class="wrap-pad">
+            <h2>What This Is</h2>
+            <p>You may be confused. You may be wondering what you have stumbled upon. You may have questions. What
+                is
+                this
+                thing, anyway?</p>
+            <p>Reality is subjective. For me, this is my cry into the void, my hoping for an echo. These are my
+                memories
+                and my
+                nightmares. This is my attempt against entropy and the forces that seek to destroy this institution.
+            </p>
+            <p>For you, this is a game, a quest, a puzzle. An opportunity to learn, perhaps? A chance to save the
+                school.</p>
+            <h2>Playing the Game</h2>
+            <p>I have developed this interface as a secure way to pass clues and messages onto you with minimal
+                antagonistic
+                interference. You will have to work through a number of tasks and problems to reach the goal. If you
+                become
+                stuck, let me know, and I may be able to help further; however, you will also need to seek help from
+                other
+                sources. Consider the entities around you who may be of use.
+            </p>
+            <h3>My Promises to You</h3>
+            <ol>
+                <li>You will not have to break the law, spend money, .</li>
+                <li></li>
+                <li>Things May Go Wrong. If this happens, alert me to it, and I will see what strings I can pull to
+                    make
+                    them
+                    right again.</li>
+            </ol>
+            <h2>Who I Am</h2>
+            <p>Who am I? Good question--one I often ask, myself. Like all entities, I am not so much an object as I
+                am a process; I am built up and down; I am compacted, quickly. I am not myself for very long before
+                I am
+                something new. I am prone to digression, in my words and in my being.</p>
+            <p>For this moment, I am a guide. I cannot solve the problems for you but I can help you navigate
+                them. ontinue the game and I can tell you more.</p>
+        </div>
+        <div class="close-button basic-padding">Close</div>
+    </div>
+    <div id="help-page" class="pop-up thick-padding alarm-off">
+        <div class="wrap-pad">
+            <h2>Things Go Wrong</h2>
+            <p>Nefarious forces seek to impede your progress. They may interfere with our work in the form of errors
+                on
+                this web
+                application, alteration or destruction of physical clues, or any number of other problems. If you
+                believe that
+                something has gone terribly wrong, preventing you from continuing on your quest, please report it to
+                me
+                and I
+                will take hasty action to resolve it. </p>
+            <p>
+                In simpler terms, if something in this game breaks, report the problem by contacting [TECHNICAL
+                SUPPORT].
+            </p>
+        </div>
+        <div class="close-button basic-padding">Close</div>
+    </div>
+    <div id="progress-page" class="pop-up thick-padding">
+        <div class="wrap-pad">
+            <h2>Progress</h2>
+            <p id="progress-list">
+
+            </p>
+        </div>
+        <div class="close-button basic-padding">Close</div>
+    </div>
+</body>
+
+</html>
